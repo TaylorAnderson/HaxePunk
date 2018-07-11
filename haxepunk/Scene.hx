@@ -188,26 +188,7 @@ class Scene extends Tweener
 		// update the entities
 		for (e in _update)
 		{
-			if (e.active)
-			{
-				if (e.hasTween) e.updateTweens(HXP.elapsed);
-				if (e.active)
-				{
-					if (e.shouldUpdate())
-					{
-						e.preUpdate.invoke();
-						e.update();
-						e.postUpdate.invoke();
-					}
-				}
-			}
-			var g = e.graphic;
-			if (g != null && g.active)
-			{
-				g.preUpdate.invoke();
-				g.update();
-				g.postUpdate.invoke();
-			}
+			updateEntity(e);
 		}
 
 		// update the camera again, in case it's following an entity
@@ -217,6 +198,31 @@ class Scene extends Tweener
 		if (HXP.cursor != null && HXP.cursor.active)
 		{
 			HXP.cursor.update();
+		}
+	}
+
+	/**
+	**/
+	public inline function updateEntity(e:Entity) {
+		if (e.active)
+		{
+			if (e.hasTween) e.updateTweens(HXP.elapsed);
+			if (e.active)
+			{
+				if (e.shouldUpdate())
+				{
+					e.preUpdate.invoke();
+					e.update();
+					e.postUpdate.invoke();
+				}
+			}
+		}
+		var g = e.graphic;
+		if (g != null && g.active)
+		{
+			g.preUpdate.invoke();
+			g.update();
+			g.postUpdate.invoke();
 		}
 	}
 
