@@ -581,6 +581,7 @@ class Entity extends Tweener
 		if (value != "") _scene.addType(this);
 		return _type;
 	}
+	
 
 	/**
 	 * An optional Mask component, used for specialized collision. If this is

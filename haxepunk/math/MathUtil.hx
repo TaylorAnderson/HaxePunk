@@ -181,6 +181,18 @@ class MathUtil
 		var exp:Float = Math.pow(10, precision);
 		return std.Math.round(num * exp) / exp;
 	}
+	
+		/**
+	 * Floor a float to the nearest decimal
+	 * @param   num        The number to round,
+	 * @param   precision  The decimal place to floor to.
+	 * @return  The floored float.
+	 */
+	public static inline function floorTo(num:Float, precision:Int=0):Float
+	{
+		var exp:Float = Math.pow(10, precision);
+		return std.Math.floor(num * exp) / exp;
+	}
 
 	/**
 	 * Find the distance between two points.
