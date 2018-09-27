@@ -1,4 +1,4 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
 /**
  * A sequence handles behaviors in order and continues until one does not succeed

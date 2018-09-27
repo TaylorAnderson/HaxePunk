@@ -1,4 +1,4 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
 /**
  * An active selector

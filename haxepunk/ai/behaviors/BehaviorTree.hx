@@ -1,6 +1,6 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
-import com.haxepunk.ai.behaviors.Parallel;
+import haxepunk.ai.behaviors.Parallel;
 
 /**
  * Behavior tree generator

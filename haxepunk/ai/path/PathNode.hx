@@ -1,4 +1,4 @@
-package com.haxepunk.ai.path;
+package haxepunk.ai.path;
 
 /**
  * Neighbor contains a reference to a node and cost value

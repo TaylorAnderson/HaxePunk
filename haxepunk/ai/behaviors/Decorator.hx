@@ -1,4 +1,4 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
 /**
  * A decorator contains a single behavior

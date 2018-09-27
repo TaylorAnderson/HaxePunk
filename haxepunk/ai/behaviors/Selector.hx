@@ -1,4 +1,4 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
 /**
  * A selector chooses the first behavior that doesn't fail

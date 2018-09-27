@@ -1,9 +1,9 @@
-package com.haxepunk.ai.path;
+package haxepunk.ai.path;
 
-import com.haxepunk.HXP;
-import com.haxepunk.masks.Grid;
-import com.haxepunk.ai.path.Heuristic;
-import com.haxepunk.ds.PriorityQueue;
+import haxepunk.HXP;
+import haxepunk.masks.Grid;
+import haxepunk.ai.path.Heuristic;
+import haxepunk.ds.PriorityQueue;
 import haxe.ds.IntMap;
 
 /**

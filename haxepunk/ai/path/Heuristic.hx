@@ -1,4 +1,4 @@
-package com.haxepunk.ai.path;
+package haxepunk.ai.path;
 
 typedef HeuristicFunction = Float->Float->Float->Float->Float;
 
