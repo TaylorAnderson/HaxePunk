@@ -1,4 +1,4 @@
-package com.haxepunk.ai.behaviors;
+package haxepunk.ai.behaviors;
 
 /**
  * A repeat node will rerun the same behavior up to a certain number of iterations
