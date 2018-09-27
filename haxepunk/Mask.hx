@@ -47,7 +47,7 @@ class Mask
 	 * Constructor.
 	 */
 	@:allow(haxepunk)
-	function new()
+     	function new()
 	{
 		_parent = Entity._EMPTY;
 		_class = Type.getClassName(Type.getClass(this));

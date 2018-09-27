@@ -45,6 +45,10 @@ class Random
 	{
 		return Std.int(random * amount);
 	}
+	
+	public static inline function range(begin:Float, end:Float):Float {
+		return ((Math.random() * (end - begin + 1)) + begin);
+	}
 
 	// Pseudo-random number generation (the seed is set in Engine's contructor).
 	static var _seed:Int = 0;
