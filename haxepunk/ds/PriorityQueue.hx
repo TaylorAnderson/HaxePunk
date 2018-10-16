@@ -1,4 +1,4 @@
-package com.haxepunk.ds;
+package haxepunk.ds;
 
 private typedef PriorityItem<T> = {
 	public var value:T;
