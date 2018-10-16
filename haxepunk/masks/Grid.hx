@@ -87,6 +87,16 @@ class Grid extends Hitbox
 		}
 		setTileXY(column, row, solid);
 	}
+	
+	public function getInverted() {
+		var newGrid = this.clone();
+		for (x in 0...Std.int(this.width / this.tileWidth)) {
+			for (y in 0...Std.int(this.height / this.tileHeight)) {
+				newGrid.setTile(x, y, !this.getTile(x, y));
+			}
+		}
+		return newGrid;
+	}
 
 	/**
 	 * Sets the value of the tile. Ignores the setting of usePositions, and assumes coordinates are

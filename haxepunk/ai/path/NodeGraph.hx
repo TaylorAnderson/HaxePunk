@@ -1,10 +1,14 @@
 package haxepunk.ai.path;
 
+import haxepunk.Entity;
 import haxepunk.HXP;
+import haxepunk.Scene;
+import haxepunk.graphics.Image;
 import haxepunk.masks.Grid;
 import haxepunk.ai.path.Heuristic;
 import haxepunk.ds.PriorityQueue;
 import haxe.ds.IntMap;
+import haxepunk.math.MathUtil;
 
 /**
  * Optimization options for path traversal
@@ -53,6 +57,15 @@ class NodeGraph
 			if (Reflect.hasField(options, "optimize"))
 				optimize = options.optimize;
 		}
+		
+		
+	}
+	
+	public inline function draw(scene:Scene) {
+		for (node in nodes) {
+			var sq = new Entity(node.x*Global.GS, node.y*Global.GS, Image.createRect(Global.GS, Global.GS));
+			scene.add(sq);
+		}
 	}
 
 	/**
@@ -80,7 +93,8 @@ class NodeGraph
 		var getNode = function(x:Int, y:Int):PathNode {
 			var node:PathNode;
 			var index:Int = y * width + x;
-			if (index < 0 || index > size) return null;
+			trace(x, width);
+			if (index < 0 || index > size || x > width-1 || x < 0 || y > height-1 || y < 0) return null;
 			if (map.exists(index))
 			{
 				node = map.get(index);
@@ -158,7 +172,7 @@ class NodeGraph
 				}
 				else
 				{
-					var g = node.g + HXP.distance(node.x, node.y, n.x, n.y);
+					var g = node.g + MathUtil.distance(node.x, node.y, n.x, n.y);
 					if (g < n.g || n.parent == null)
 					{
 						n.g = g;
@@ -251,13 +265,13 @@ class NodeGraph
 	/**
 	 * Retrieves the closest PathNode to a world point
 	 */
-	private inline function getClosestNode(x:Float, y:Float):PathNode
+	public inline function getClosestNode(x:Float, y:Float):PathNode
 	{
-		var closestDist:Float = HXP.NUMBER_MAX_VALUE;
+		var closestDist:Float = MathUtil.NUMBER_MAX_VALUE;
 		var closest:PathNode = null;
 		for (node in nodes)
 		{
-			var dist = HXP.distance(node.x, node.y, x, y);
+			var dist = MathUtil.distance(node.x, node.y, x, y);
 			if (dist < closestDist)
 			{
 				closest = node;
